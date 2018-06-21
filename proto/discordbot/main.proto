@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package discordbot_grpc;
+
+message Ping {
+    string message = 1;   
+}
+
+message Pong {
+    string message = 1;   
+}
+
+message User {
+    string username = 1;
+    int32 auth_id = 2;
+}
+
+message Role {
+    string name = 1;
+    int64 id = 2;
+}
+
+message DisableUserResponse {
+    string message = 1;
+    bool success = 2;
+}
+
+message BanUserRequest {
+    User user = 1;
+    string reason = 2;
+}
+
+message BanUserResponse {
+    string message = 1;
+    bool success = 2;
+}
+service DiscordBot {
+    rpc Check(Ping) returns (Pong);
+    rpc DisableUser(User) returns (DisableUserResponse);
+    rpc BanUser(User) returns (BanUserResponse);
+}
