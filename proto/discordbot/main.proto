@@ -13,6 +13,7 @@ message Pong {
 message User {
     string username = 1;
     int32 auth_id = 2;
+    string discord_username = 3;
 }
 
 message Role {
