@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='grpc_discord/main.proto',
   package='grpc_discord',
   syntax='proto3',
-  serialized_pb=_b('\n\x17grpc_discord/main.proto\x12\x0cgrpc_discord\"\x17\n\x04Ping\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x04Pong\x12\x0f\n\x07message\x18\x01 \x01(\t\"C\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0f\n\x07\x61uth_id\x18\x02 \x01(\x05\x12\x18\n\x10\x64iscord_username\x18\x03 \x01(\t\" \n\x04Role\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"7\n\x13\x44isableUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"B\n\x0e\x42\x61nUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"3\n\x0f\x42\x61nUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x32\xbe\x01\n\x07\x44iscord\x12/\n\x05\x43heck\x12\x12.grpc_discord.Ping\x1a\x12.grpc_discord.Pong\x12\x44\n\x0b\x44isableUser\x12\x12.grpc_discord.User\x1a!.grpc_discord.DisableUserResponse\x12<\n\x07\x42\x61nUser\x12\x12.grpc_discord.User\x1a\x1d.grpc_discord.BanUserResponseb\x06proto3')
+  serialized_pb=_b('\n\x17grpc_discord/main.proto\x12\x0cgrpc_discord\"\x17\n\x04Ping\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x04Pong\x12\x0f\n\x07message\x18\x01 \x01(\t\"J\n\x05Guild\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04icon\x18\x03 \x01(\t\x12\x13\n\x0bunavailable\x18\x04 \x01(\x08J\x04\x08\x05\x10\x06\"\x9d\x01\n\x04Role\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\"\n\x05guild\x18\x03 \x01(\x0b\x32\x13.grpc_discord.Guild\x12\r\n\x05\x63olor\x18\x04 \x01(\x05\x12\r\n\x05hoist\x18\x05 \x01(\x08\x12\x10\n\x08position\x18\x06 \x01(\x05\x12\x13\n\x0bmentionable\x18\x07 \x01(\x08\x12\x12\n\ncreated_at\x18\x08 \x01(\x03\"\xce\x01\n\x04User\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0b\n\x03\x62ot\x18\x03 \x01(\x08\x12\x15\n\rdiscriminator\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x11\n\tjoined_at\x18\x06 \x01(\x03\x12\x12\n\ncreated_at\x18\x07 \x01(\x03\x12$\n\x08top_role\x18\x08 \x01(\x0b\x32\x12.grpc_discord.Role\x12!\n\x05roles\x18\t \x03(\x0b\x32\x12.grpc_discord.Role\"`\n\x0eGetUserRequest\x12\x0c\n\x02id\x18\x01 \x01(\x03H\x00\x12\x16\n\x0c\x64isplay_name\x18\x02 \x01(\tH\x00\x12\x15\n\rinclude_roles\x18\x03 \x01(\x08\x42\x11\n\x0fsearch_criteria\"D\n\x0fGetUserResponse\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0f\n\x07success\x18\x02 \x01(\x08\"7\n\x13\x44isableUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"B\n\x0e\x42\x61nUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"3\n\x0f\x42\x61nUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x32\x82\x01\n\x07\x44iscord\x12/\n\x05\x43heck\x12\x12.grpc_discord.Ping\x1a\x12.grpc_discord.Pong\x12\x46\n\x07GetUser\x12\x1c.grpc_discord.GetUserRequest\x1a\x1d.grpc_discord.GetUserResponseb\x06proto3')
 )
 
 
@@ -87,31 +87,38 @@ _PONG = _descriptor.Descriptor(
 )
 
 
-_USER = _descriptor.Descriptor(
-  name='User',
-  full_name='grpc_discord.User',
+_GUILD = _descriptor.Descriptor(
+  name='Guild',
+  full_name='grpc_discord.Guild',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='username', full_name='grpc_discord.User.username', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='auth_id', full_name='grpc_discord.User.auth_id', index=1,
-      number=2, type=5, cpp_type=1, label=1,
+      name='id', full_name='grpc_discord.Guild.id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='discord_username', full_name='grpc_discord.User.discord_username', index=2,
+      name='name', full_name='grpc_discord.Guild.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='icon', full_name='grpc_discord.Guild.icon', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unavailable', full_name='grpc_discord.Guild.unavailable', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -128,7 +135,7 @@ _USER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=91,
-  serialized_end=158,
+  serialized_end=165,
 )
 
 
@@ -140,15 +147,57 @@ _ROLE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='grpc_discord.Role.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      name='id', full_name='grpc_discord.Role.id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='grpc_discord.Role.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id', full_name='grpc_discord.Role.id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
+      name='guild', full_name='grpc_discord.Role.guild', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='color', full_name='grpc_discord.Role.color', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hoist', full_name='grpc_discord.Role.hoist', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='position', full_name='grpc_discord.Role.position', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='mentionable', full_name='grpc_discord.Role.mentionable', index=6,
+      number=7, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='created_at', full_name='grpc_discord.Role.created_at', index=7,
+      number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -165,8 +214,181 @@ _ROLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=160,
-  serialized_end=192,
+  serialized_start=168,
+  serialized_end=325,
+)
+
+
+_USER = _descriptor.Descriptor(
+  name='User',
+  full_name='grpc_discord.User',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='grpc_discord.User.id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='display_name', full_name='grpc_discord.User.display_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='bot', full_name='grpc_discord.User.bot', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='discriminator', full_name='grpc_discord.User.discriminator', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='username', full_name='grpc_discord.User.username', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='joined_at', full_name='grpc_discord.User.joined_at', index=5,
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='created_at', full_name='grpc_discord.User.created_at', index=6,
+      number=7, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='top_role', full_name='grpc_discord.User.top_role', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='roles', full_name='grpc_discord.User.roles', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=328,
+  serialized_end=534,
+)
+
+
+_GETUSERREQUEST = _descriptor.Descriptor(
+  name='GetUserRequest',
+  full_name='grpc_discord.GetUserRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='grpc_discord.GetUserRequest.id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='display_name', full_name='grpc_discord.GetUserRequest.display_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='include_roles', full_name='grpc_discord.GetUserRequest.include_roles', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='search_criteria', full_name='grpc_discord.GetUserRequest.search_criteria',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=536,
+  serialized_end=632,
+)
+
+
+_GETUSERRESPONSE = _descriptor.Descriptor(
+  name='GetUserResponse',
+  full_name='grpc_discord.GetUserResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='grpc_discord.GetUserResponse.user', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='success', full_name='grpc_discord.GetUserResponse.success', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=634,
+  serialized_end=702,
 )
 
 
@@ -203,8 +425,8 @@ _DISABLEUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=194,
-  serialized_end=249,
+  serialized_start=704,
+  serialized_end=759,
 )
 
 
@@ -241,8 +463,8 @@ _BANUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=251,
-  serialized_end=317,
+  serialized_start=761,
+  serialized_end=827,
 )
 
 
@@ -279,15 +501,28 @@ _BANUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=319,
-  serialized_end=370,
+  serialized_start=829,
+  serialized_end=880,
 )
 
+_ROLE.fields_by_name['guild'].message_type = _GUILD
+_USER.fields_by_name['top_role'].message_type = _ROLE
+_USER.fields_by_name['roles'].message_type = _ROLE
+_GETUSERREQUEST.oneofs_by_name['search_criteria'].fields.append(
+  _GETUSERREQUEST.fields_by_name['id'])
+_GETUSERREQUEST.fields_by_name['id'].containing_oneof = _GETUSERREQUEST.oneofs_by_name['search_criteria']
+_GETUSERREQUEST.oneofs_by_name['search_criteria'].fields.append(
+  _GETUSERREQUEST.fields_by_name['display_name'])
+_GETUSERREQUEST.fields_by_name['display_name'].containing_oneof = _GETUSERREQUEST.oneofs_by_name['search_criteria']
+_GETUSERRESPONSE.fields_by_name['user'].message_type = _USER
 _BANUSERREQUEST.fields_by_name['user'].message_type = _USER
 DESCRIPTOR.message_types_by_name['Ping'] = _PING
 DESCRIPTOR.message_types_by_name['Pong'] = _PONG
-DESCRIPTOR.message_types_by_name['User'] = _USER
+DESCRIPTOR.message_types_by_name['Guild'] = _GUILD
 DESCRIPTOR.message_types_by_name['Role'] = _ROLE
+DESCRIPTOR.message_types_by_name['User'] = _USER
+DESCRIPTOR.message_types_by_name['GetUserRequest'] = _GETUSERREQUEST
+DESCRIPTOR.message_types_by_name['GetUserResponse'] = _GETUSERRESPONSE
 DESCRIPTOR.message_types_by_name['DisableUserResponse'] = _DISABLEUSERRESPONSE
 DESCRIPTOR.message_types_by_name['BanUserRequest'] = _BANUSERREQUEST
 DESCRIPTOR.message_types_by_name['BanUserResponse'] = _BANUSERRESPONSE
@@ -307,12 +542,12 @@ Pong = _reflection.GeneratedProtocolMessageType('Pong', (_message.Message,), dic
   ))
 _sym_db.RegisterMessage(Pong)
 
-User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
-  DESCRIPTOR = _USER,
+Guild = _reflection.GeneratedProtocolMessageType('Guild', (_message.Message,), dict(
+  DESCRIPTOR = _GUILD,
   __module__ = 'grpc_discord.main_pb2'
-  # @@protoc_insertion_point(class_scope:grpc_discord.User)
+  # @@protoc_insertion_point(class_scope:grpc_discord.Guild)
   ))
-_sym_db.RegisterMessage(User)
+_sym_db.RegisterMessage(Guild)
 
 Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), dict(
   DESCRIPTOR = _ROLE,
@@ -320,6 +555,27 @@ Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), dic
   # @@protoc_insertion_point(class_scope:grpc_discord.Role)
   ))
 _sym_db.RegisterMessage(Role)
+
+User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
+  DESCRIPTOR = _USER,
+  __module__ = 'grpc_discord.main_pb2'
+  # @@protoc_insertion_point(class_scope:grpc_discord.User)
+  ))
+_sym_db.RegisterMessage(User)
+
+GetUserRequest = _reflection.GeneratedProtocolMessageType('GetUserRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETUSERREQUEST,
+  __module__ = 'grpc_discord.main_pb2'
+  # @@protoc_insertion_point(class_scope:grpc_discord.GetUserRequest)
+  ))
+_sym_db.RegisterMessage(GetUserRequest)
+
+GetUserResponse = _reflection.GeneratedProtocolMessageType('GetUserResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETUSERRESPONSE,
+  __module__ = 'grpc_discord.main_pb2'
+  # @@protoc_insertion_point(class_scope:grpc_discord.GetUserResponse)
+  ))
+_sym_db.RegisterMessage(GetUserResponse)
 
 DisableUserResponse = _reflection.GeneratedProtocolMessageType('DisableUserResponse', (_message.Message,), dict(
   DESCRIPTOR = _DISABLEUSERRESPONSE,
@@ -350,8 +606,8 @@ _DISCORD = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=373,
-  serialized_end=563,
+  serialized_start=883,
+  serialized_end=1013,
   methods=[
   _descriptor.MethodDescriptor(
     name='Check',
@@ -363,21 +619,12 @@ _DISCORD = _descriptor.ServiceDescriptor(
     options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='DisableUser',
-    full_name='grpc_discord.Discord.DisableUser',
+    name='GetUser',
+    full_name='grpc_discord.Discord.GetUser',
     index=1,
     containing_service=None,
-    input_type=_USER,
-    output_type=_DISABLEUSERRESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='BanUser',
-    full_name='grpc_discord.Discord.BanUser',
-    index=2,
-    containing_service=None,
-    input_type=_USER,
-    output_type=_BANUSERRESPONSE,
+    input_type=_GETUSERREQUEST,
+    output_type=_GETUSERRESPONSE,
     options=None,
   ),
 ])

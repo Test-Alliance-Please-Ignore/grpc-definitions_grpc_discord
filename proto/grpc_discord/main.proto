@@ -10,15 +10,48 @@ message Pong {
     string message = 1;   
 }
 
-message User {
-    string username = 1;
-    int32 auth_id = 2;
-    string discord_username = 3;
+message Guild {
+    int64 id = 1;
+    string name = 2;
+    string icon = 3;
+    bool unavailable = 4;
+    reserved 5; //roles
 }
 
 message Role {
-    string name = 1;
-    int64 id = 2;
+    int64 id = 1;
+    string name = 2;
+    Guild guild = 3;
+    int32 color = 4;
+    bool hoist = 5;
+    int32 position = 6;
+    bool mentionable = 7;
+    int64 created_at = 8;
+}
+
+message User {
+    int64 id = 1;
+    string display_name = 2;
+    bool bot = 3;
+    string discriminator = 4;
+    string username = 5;
+    int64 joined_at = 6;
+    int64 created_at = 7;
+    Role top_role = 8;
+    repeated Role roles = 9;
+}
+
+message GetUserRequest {
+    oneof search_criteria {
+        int64 id = 1;
+        string display_name = 2;
+    }
+    bool include_roles = 3;
+}
+
+message GetUserResponse {
+    User user = 1;
+    bool success = 2;   
 }
 
 message DisableUserResponse {
@@ -38,6 +71,5 @@ message BanUserResponse {
 
 service Discord {
     rpc Check(Ping) returns (Pong);
-    rpc DisableUser(User) returns (DisableUserResponse);
-    rpc BanUser(User) returns (BanUserResponse);
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
 }

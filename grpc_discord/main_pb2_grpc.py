@@ -19,15 +19,10 @@ class DiscordStub(object):
         request_serializer=grpc__discord_dot_main__pb2.Ping.SerializeToString,
         response_deserializer=grpc__discord_dot_main__pb2.Pong.FromString,
         )
-    self.DisableUser = channel.unary_unary(
-        '/grpc_discord.Discord/DisableUser',
-        request_serializer=grpc__discord_dot_main__pb2.User.SerializeToString,
-        response_deserializer=grpc__discord_dot_main__pb2.DisableUserResponse.FromString,
-        )
-    self.BanUser = channel.unary_unary(
-        '/grpc_discord.Discord/BanUser',
-        request_serializer=grpc__discord_dot_main__pb2.User.SerializeToString,
-        response_deserializer=grpc__discord_dot_main__pb2.BanUserResponse.FromString,
+    self.GetUser = channel.unary_unary(
+        '/grpc_discord.Discord/GetUser',
+        request_serializer=grpc__discord_dot_main__pb2.GetUserRequest.SerializeToString,
+        response_deserializer=grpc__discord_dot_main__pb2.GetUserResponse.FromString,
         )
 
 
@@ -42,14 +37,7 @@ class DiscordServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def DisableUser(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def BanUser(self, request, context):
+  def GetUser(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -64,15 +52,10 @@ def add_DiscordServicer_to_server(servicer, server):
           request_deserializer=grpc__discord_dot_main__pb2.Ping.FromString,
           response_serializer=grpc__discord_dot_main__pb2.Pong.SerializeToString,
       ),
-      'DisableUser': grpc.unary_unary_rpc_method_handler(
-          servicer.DisableUser,
-          request_deserializer=grpc__discord_dot_main__pb2.User.FromString,
-          response_serializer=grpc__discord_dot_main__pb2.DisableUserResponse.SerializeToString,
-      ),
-      'BanUser': grpc.unary_unary_rpc_method_handler(
-          servicer.BanUser,
-          request_deserializer=grpc__discord_dot_main__pb2.User.FromString,
-          response_serializer=grpc__discord_dot_main__pb2.BanUserResponse.SerializeToString,
+      'GetUser': grpc.unary_unary_rpc_method_handler(
+          servicer.GetUser,
+          request_deserializer=grpc__discord_dot_main__pb2.GetUserRequest.FromString,
+          response_serializer=grpc__discord_dot_main__pb2.GetUserResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
