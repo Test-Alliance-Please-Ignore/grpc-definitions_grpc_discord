@@ -19,6 +19,10 @@ class DiscordBase(abc.ABC):
     async def GetUser(self, stream):
         pass
 
+    @abc.abstractmethod
+    async def StripUserRoles(self, stream):
+        pass
+
     def __mapping__(self):
         return {
             '/grpc_discord.Discord/Check': grpclib.const.Handler(
@@ -32,6 +36,12 @@ class DiscordBase(abc.ABC):
                 grpclib.const.Cardinality.UNARY_UNARY,
                 grpc_discord.main_pb2.GetUserRequest,
                 grpc_discord.main_pb2.GetUserResponse,
+            ),
+            '/grpc_discord.Discord/StripUserRoles': grpclib.const.Handler(
+                self.StripUserRoles,
+                grpclib.const.Cardinality.UNARY_UNARY,
+                grpc_discord.main_pb2.StripUserRequest,
+                grpc_discord.main_pb2.StripUserResponse,
             ),
         }
 
@@ -50,4 +60,10 @@ class DiscordStub:
             '/grpc_discord.Discord/GetUser',
             grpc_discord.main_pb2.GetUserRequest,
             grpc_discord.main_pb2.GetUserResponse,
+        )
+        self.StripUserRoles = grpclib.client.UnaryUnaryMethod(
+            channel,
+            '/grpc_discord.Discord/StripUserRoles',
+            grpc_discord.main_pb2.StripUserRequest,
+            grpc_discord.main_pb2.StripUserResponse,
         )

@@ -69,7 +69,18 @@ message BanUserResponse {
     bool success = 2;
 }
 
+message StripUserRequest {
+    User user = 1;
+    string reason = 2;
+}
+
+message StripUserResponse {
+    string message = 1;
+    bool success = 2;
+}
+
 service Discord {
     rpc Check(Ping) returns (Pong);
     rpc GetUser(GetUserRequest) returns (GetUserResponse);
+    rpc StripUserRoles(StripUserRequest) returns (StripUserResponse);
 }
