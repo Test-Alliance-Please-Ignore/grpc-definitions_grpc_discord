@@ -5,7 +5,6 @@ setup(name='grpc_discord',
     packages=['grpc_discord'],
     install_requires = [
         'grpcio',
-        'grpclib',
         'googleapis-common-protos'
     ],
     zip_safe = False
