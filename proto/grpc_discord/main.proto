@@ -79,8 +79,27 @@ message StripUserResponse {
     bool success = 2;
 }
 
+message UpdateDisplayNameRequest {
+    User user = 1;
+    string nickname = 2;
+}
+
+message UpdateDisplayNameResponse {
+    string message = 1;
+    bool success = 2;
+}
+
+message UpdateUserRolesRequest {
+
+}
+
+message UpdateUserRolesResponse {
+
+}
+
 service Discord {
     rpc Check(Ping) returns (Pong);
     rpc GetUser(GetUserRequest) returns (GetUserResponse);
     rpc StripUserRoles(StripUserRequest) returns (StripUserResponse);
+    rpc SetUserNickname(UpdateDisplayNameRequest) returns (UpdateDisplayNameResponse);
 }

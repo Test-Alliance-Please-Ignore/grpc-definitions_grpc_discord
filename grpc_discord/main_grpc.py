@@ -23,6 +23,10 @@ class DiscordBase(abc.ABC):
     async def StripUserRoles(self, stream):
         pass
 
+    @abc.abstractmethod
+    async def SetUserNickname(self, stream):
+        pass
+
     def __mapping__(self):
         return {
             '/grpc_discord.Discord/Check': grpclib.const.Handler(
@@ -42,6 +46,12 @@ class DiscordBase(abc.ABC):
                 grpclib.const.Cardinality.UNARY_UNARY,
                 grpc_discord.main_pb2.StripUserRequest,
                 grpc_discord.main_pb2.StripUserResponse,
+            ),
+            '/grpc_discord.Discord/SetUserNickname': grpclib.const.Handler(
+                self.SetUserNickname,
+                grpclib.const.Cardinality.UNARY_UNARY,
+                grpc_discord.main_pb2.UpdateDisplayNameRequest,
+                grpc_discord.main_pb2.UpdateDisplayNameResponse,
             ),
         }
 
@@ -66,4 +76,10 @@ class DiscordStub:
             '/grpc_discord.Discord/StripUserRoles',
             grpc_discord.main_pb2.StripUserRequest,
             grpc_discord.main_pb2.StripUserResponse,
+        )
+        self.SetUserNickname = grpclib.client.UnaryUnaryMethod(
+            channel,
+            '/grpc_discord.Discord/SetUserNickname',
+            grpc_discord.main_pb2.UpdateDisplayNameRequest,
+            grpc_discord.main_pb2.UpdateDisplayNameResponse,
         )
