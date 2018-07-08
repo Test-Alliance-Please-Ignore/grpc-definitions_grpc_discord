@@ -27,6 +27,10 @@ class DiscordBase(abc.ABC):
     async def SetUserNickname(self, stream):
         pass
 
+    @abc.abstractmethod
+    async def UpdateRoles(self, stream):
+        pass
+
     def __mapping__(self):
         return {
             '/grpc_discord.Discord/Check': grpclib.const.Handler(
@@ -52,6 +56,12 @@ class DiscordBase(abc.ABC):
                 grpclib.const.Cardinality.UNARY_UNARY,
                 grpc_discord.main_pb2.UpdateDisplayNameRequest,
                 grpc_discord.main_pb2.UpdateDisplayNameResponse,
+            ),
+            '/grpc_discord.Discord/UpdateRoles': grpclib.const.Handler(
+                self.UpdateRoles,
+                grpclib.const.Cardinality.UNARY_UNARY,
+                grpc_discord.main_pb2.UpdateUserRolesRequest,
+                grpc_discord.main_pb2.UpdateUserRolesResponse,
             ),
         }
 
@@ -82,4 +92,10 @@ class DiscordStub:
             '/grpc_discord.Discord/SetUserNickname',
             grpc_discord.main_pb2.UpdateDisplayNameRequest,
             grpc_discord.main_pb2.UpdateDisplayNameResponse,
+        )
+        self.UpdateRoles = grpclib.client.UnaryUnaryMethod(
+            channel,
+            '/grpc_discord.Discord/UpdateRoles',
+            grpc_discord.main_pb2.UpdateUserRolesRequest,
+            grpc_discord.main_pb2.UpdateUserRolesResponse,
         )

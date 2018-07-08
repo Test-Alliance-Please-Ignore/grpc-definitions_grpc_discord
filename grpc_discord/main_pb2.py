@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='grpc_discord/main.proto',
   package='grpc_discord',
   syntax='proto3',
-  serialized_pb=_b('\n\x17grpc_discord/main.proto\x12\x0cgrpc_discord\"\x17\n\x04Ping\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x04Pong\x12\x0f\n\x07message\x18\x01 \x01(\t\"J\n\x05Guild\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04icon\x18\x03 \x01(\t\x12\x13\n\x0bunavailable\x18\x04 \x01(\x08J\x04\x08\x05\x10\x06\"\x9d\x01\n\x04Role\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\"\n\x05guild\x18\x03 \x01(\x0b\x32\x13.grpc_discord.Guild\x12\r\n\x05\x63olor\x18\x04 \x01(\x05\x12\r\n\x05hoist\x18\x05 \x01(\x08\x12\x10\n\x08position\x18\x06 \x01(\x05\x12\x13\n\x0bmentionable\x18\x07 \x01(\x08\x12\x12\n\ncreated_at\x18\x08 \x01(\x03\"\xce\x01\n\x04User\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0b\n\x03\x62ot\x18\x03 \x01(\x08\x12\x15\n\rdiscriminator\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x11\n\tjoined_at\x18\x06 \x01(\x03\x12\x12\n\ncreated_at\x18\x07 \x01(\x03\x12$\n\x08top_role\x18\x08 \x01(\x0b\x32\x12.grpc_discord.Role\x12!\n\x05roles\x18\t \x03(\x0b\x32\x12.grpc_discord.Role\"`\n\x0eGetUserRequest\x12\x0c\n\x02id\x18\x01 \x01(\x03H\x00\x12\x16\n\x0c\x64isplay_name\x18\x02 \x01(\tH\x00\x12\x15\n\rinclude_roles\x18\x03 \x01(\x08\x42\x11\n\x0fsearch_criteria\"D\n\x0fGetUserResponse\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0f\n\x07success\x18\x02 \x01(\x08\"7\n\x13\x44isableUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"B\n\x0e\x42\x61nUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"3\n\x0f\x42\x61nUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"D\n\x10StripUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"5\n\x11StripUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"N\n\x18UpdateDisplayNameRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x10\n\x08nickname\x18\x02 \x01(\t\"=\n\x19UpdateDisplayNameResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"\x18\n\x16UpdateUserRolesRequest\"\x19\n\x17UpdateUserRolesResponse2\xb9\x02\n\x07\x44iscord\x12/\n\x05\x43heck\x12\x12.grpc_discord.Ping\x1a\x12.grpc_discord.Pong\x12\x46\n\x07GetUser\x12\x1c.grpc_discord.GetUserRequest\x1a\x1d.grpc_discord.GetUserResponse\x12Q\n\x0eStripUserRoles\x12\x1e.grpc_discord.StripUserRequest\x1a\x1f.grpc_discord.StripUserResponse\x12\x62\n\x0fSetUserNickname\x12&.grpc_discord.UpdateDisplayNameRequest\x1a\'.grpc_discord.UpdateDisplayNameResponseb\x06proto3')
+  serialized_pb=_b('\n\x17grpc_discord/main.proto\x12\x0cgrpc_discord\"\x17\n\x04Ping\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x04Pong\x12\x0f\n\x07message\x18\x01 \x01(\t\"J\n\x05Guild\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04icon\x18\x03 \x01(\t\x12\x13\n\x0bunavailable\x18\x04 \x01(\x08J\x04\x08\x05\x10\x06\"\x9d\x01\n\x04Role\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\"\n\x05guild\x18\x03 \x01(\x0b\x32\x13.grpc_discord.Guild\x12\r\n\x05\x63olor\x18\x04 \x01(\x05\x12\r\n\x05hoist\x18\x05 \x01(\x08\x12\x10\n\x08position\x18\x06 \x01(\x05\x12\x13\n\x0bmentionable\x18\x07 \x01(\x08\x12\x12\n\ncreated_at\x18\x08 \x01(\x03\"%\n\tAuthGroup\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\">\n\x13\x41uthGroupMembership\x12\'\n\x06groups\x18\x01 \x03(\x0b\x32\x17.grpc_discord.AuthGroup\"4\n\x0fRolesMembership\x12!\n\x05roles\x18\x01 \x03(\x0b\x32\x12.grpc_discord.Role\"\xce\x01\n\x04User\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0b\n\x03\x62ot\x18\x03 \x01(\x08\x12\x15\n\rdiscriminator\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x11\n\tjoined_at\x18\x06 \x01(\x03\x12\x12\n\ncreated_at\x18\x07 \x01(\x03\x12$\n\x08top_role\x18\x08 \x01(\x0b\x32\x12.grpc_discord.Role\x12!\n\x05roles\x18\t \x03(\x0b\x32\x12.grpc_discord.Role\"`\n\x0eGetUserRequest\x12\x0c\n\x02id\x18\x01 \x01(\x03H\x00\x12\x16\n\x0c\x64isplay_name\x18\x02 \x01(\tH\x00\x12\x15\n\rinclude_roles\x18\x03 \x01(\x08\x42\x11\n\x0fsearch_criteria\"D\n\x0fGetUserResponse\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0f\n\x07success\x18\x02 \x01(\x08\"7\n\x13\x44isableUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"B\n\x0e\x42\x61nUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"3\n\x0f\x42\x61nUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"D\n\x10StripUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"5\n\x11StripUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"N\n\x18UpdateDisplayNameRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x10\n\x08nickname\x18\x02 \x01(\t\"=\n\x19UpdateDisplayNameResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"\xbc\x01\n\x16UpdateUserRolesRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\r\n\x05reset\x18\x02 \x01(\x08\x12\x33\n\x06groups\x18\x03 \x01(\x0b\x32!.grpc_discord.AuthGroupMembershipH\x00\x12.\n\x05roles\x18\x04 \x01(\x0b\x32\x1d.grpc_discord.RolesMembershipH\x00\x42\x0c\n\nmembership\";\n\x17UpdateUserRolesResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x32\x95\x03\n\x07\x44iscord\x12/\n\x05\x43heck\x12\x12.grpc_discord.Ping\x1a\x12.grpc_discord.Pong\x12\x46\n\x07GetUser\x12\x1c.grpc_discord.GetUserRequest\x1a\x1d.grpc_discord.GetUserResponse\x12Q\n\x0eStripUserRoles\x12\x1e.grpc_discord.StripUserRequest\x1a\x1f.grpc_discord.StripUserResponse\x12\x62\n\x0fSetUserNickname\x12&.grpc_discord.UpdateDisplayNameRequest\x1a\'.grpc_discord.UpdateDisplayNameResponse\x12Z\n\x0bUpdateRoles\x12$.grpc_discord.UpdateUserRolesRequest\x1a%.grpc_discord.UpdateUserRolesResponseb\x06proto3')
 )
 
 
@@ -219,6 +219,106 @@ _ROLE = _descriptor.Descriptor(
 )
 
 
+_AUTHGROUP = _descriptor.Descriptor(
+  name='AuthGroup',
+  full_name='grpc_discord.AuthGroup',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='grpc_discord.AuthGroup.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='grpc_discord.AuthGroup.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=327,
+  serialized_end=364,
+)
+
+
+_AUTHGROUPMEMBERSHIP = _descriptor.Descriptor(
+  name='AuthGroupMembership',
+  full_name='grpc_discord.AuthGroupMembership',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='groups', full_name='grpc_discord.AuthGroupMembership.groups', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=366,
+  serialized_end=428,
+)
+
+
+_ROLESMEMBERSHIP = _descriptor.Descriptor(
+  name='RolesMembership',
+  full_name='grpc_discord.RolesMembership',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='roles', full_name='grpc_discord.RolesMembership.roles', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=430,
+  serialized_end=482,
+)
+
+
 _USER = _descriptor.Descriptor(
   name='User',
   full_name='grpc_discord.User',
@@ -301,8 +401,8 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=328,
-  serialized_end=534,
+  serialized_start=485,
+  serialized_end=691,
 )
 
 
@@ -349,8 +449,8 @@ _GETUSERREQUEST = _descriptor.Descriptor(
       name='search_criteria', full_name='grpc_discord.GetUserRequest.search_criteria',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=536,
-  serialized_end=632,
+  serialized_start=693,
+  serialized_end=789,
 )
 
 
@@ -387,8 +487,8 @@ _GETUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=634,
-  serialized_end=702,
+  serialized_start=791,
+  serialized_end=859,
 )
 
 
@@ -425,8 +525,8 @@ _DISABLEUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=704,
-  serialized_end=759,
+  serialized_start=861,
+  serialized_end=916,
 )
 
 
@@ -463,8 +563,8 @@ _BANUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=761,
-  serialized_end=827,
+  serialized_start=918,
+  serialized_end=984,
 )
 
 
@@ -501,8 +601,8 @@ _BANUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=829,
-  serialized_end=880,
+  serialized_start=986,
+  serialized_end=1037,
 )
 
 
@@ -539,8 +639,8 @@ _STRIPUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=882,
-  serialized_end=950,
+  serialized_start=1039,
+  serialized_end=1107,
 )
 
 
@@ -577,8 +677,8 @@ _STRIPUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=952,
-  serialized_end=1005,
+  serialized_start=1109,
+  serialized_end=1162,
 )
 
 
@@ -615,8 +715,8 @@ _UPDATEDISPLAYNAMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1007,
-  serialized_end=1085,
+  serialized_start=1164,
+  serialized_end=1242,
 )
 
 
@@ -653,8 +753,8 @@ _UPDATEDISPLAYNAMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1087,
-  serialized_end=1148,
+  serialized_start=1244,
+  serialized_end=1305,
 )
 
 
@@ -665,6 +765,34 @@ _UPDATEUSERROLESREQUEST = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='grpc_discord.UpdateUserRolesRequest.user', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='reset', full_name='grpc_discord.UpdateUserRolesRequest.reset', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='groups', full_name='grpc_discord.UpdateUserRolesRequest.groups', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='roles', full_name='grpc_discord.UpdateUserRolesRequest.roles', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -676,9 +804,12 @@ _UPDATEUSERROLESREQUEST = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
+    _descriptor.OneofDescriptor(
+      name='membership', full_name='grpc_discord.UpdateUserRolesRequest.membership',
+      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1150,
-  serialized_end=1174,
+  serialized_start=1308,
+  serialized_end=1496,
 )
 
 
@@ -689,6 +820,20 @@ _UPDATEUSERROLESRESPONSE = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='grpc_discord.UpdateUserRolesResponse.message', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='success', full_name='grpc_discord.UpdateUserRolesResponse.success', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -701,11 +846,13 @@ _UPDATEUSERROLESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1176,
-  serialized_end=1201,
+  serialized_start=1498,
+  serialized_end=1557,
 )
 
 _ROLE.fields_by_name['guild'].message_type = _GUILD
+_AUTHGROUPMEMBERSHIP.fields_by_name['groups'].message_type = _AUTHGROUP
+_ROLESMEMBERSHIP.fields_by_name['roles'].message_type = _ROLE
 _USER.fields_by_name['top_role'].message_type = _ROLE
 _USER.fields_by_name['roles'].message_type = _ROLE
 _GETUSERREQUEST.oneofs_by_name['search_criteria'].fields.append(
@@ -718,10 +865,22 @@ _GETUSERRESPONSE.fields_by_name['user'].message_type = _USER
 _BANUSERREQUEST.fields_by_name['user'].message_type = _USER
 _STRIPUSERREQUEST.fields_by_name['user'].message_type = _USER
 _UPDATEDISPLAYNAMEREQUEST.fields_by_name['user'].message_type = _USER
+_UPDATEUSERROLESREQUEST.fields_by_name['user'].message_type = _USER
+_UPDATEUSERROLESREQUEST.fields_by_name['groups'].message_type = _AUTHGROUPMEMBERSHIP
+_UPDATEUSERROLESREQUEST.fields_by_name['roles'].message_type = _ROLESMEMBERSHIP
+_UPDATEUSERROLESREQUEST.oneofs_by_name['membership'].fields.append(
+  _UPDATEUSERROLESREQUEST.fields_by_name['groups'])
+_UPDATEUSERROLESREQUEST.fields_by_name['groups'].containing_oneof = _UPDATEUSERROLESREQUEST.oneofs_by_name['membership']
+_UPDATEUSERROLESREQUEST.oneofs_by_name['membership'].fields.append(
+  _UPDATEUSERROLESREQUEST.fields_by_name['roles'])
+_UPDATEUSERROLESREQUEST.fields_by_name['roles'].containing_oneof = _UPDATEUSERROLESREQUEST.oneofs_by_name['membership']
 DESCRIPTOR.message_types_by_name['Ping'] = _PING
 DESCRIPTOR.message_types_by_name['Pong'] = _PONG
 DESCRIPTOR.message_types_by_name['Guild'] = _GUILD
 DESCRIPTOR.message_types_by_name['Role'] = _ROLE
+DESCRIPTOR.message_types_by_name['AuthGroup'] = _AUTHGROUP
+DESCRIPTOR.message_types_by_name['AuthGroupMembership'] = _AUTHGROUPMEMBERSHIP
+DESCRIPTOR.message_types_by_name['RolesMembership'] = _ROLESMEMBERSHIP
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['GetUserRequest'] = _GETUSERREQUEST
 DESCRIPTOR.message_types_by_name['GetUserResponse'] = _GETUSERRESPONSE
@@ -763,6 +922,27 @@ Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), dic
   # @@protoc_insertion_point(class_scope:grpc_discord.Role)
   ))
 _sym_db.RegisterMessage(Role)
+
+AuthGroup = _reflection.GeneratedProtocolMessageType('AuthGroup', (_message.Message,), dict(
+  DESCRIPTOR = _AUTHGROUP,
+  __module__ = 'grpc_discord.main_pb2'
+  # @@protoc_insertion_point(class_scope:grpc_discord.AuthGroup)
+  ))
+_sym_db.RegisterMessage(AuthGroup)
+
+AuthGroupMembership = _reflection.GeneratedProtocolMessageType('AuthGroupMembership', (_message.Message,), dict(
+  DESCRIPTOR = _AUTHGROUPMEMBERSHIP,
+  __module__ = 'grpc_discord.main_pb2'
+  # @@protoc_insertion_point(class_scope:grpc_discord.AuthGroupMembership)
+  ))
+_sym_db.RegisterMessage(AuthGroupMembership)
+
+RolesMembership = _reflection.GeneratedProtocolMessageType('RolesMembership', (_message.Message,), dict(
+  DESCRIPTOR = _ROLESMEMBERSHIP,
+  __module__ = 'grpc_discord.main_pb2'
+  # @@protoc_insertion_point(class_scope:grpc_discord.RolesMembership)
+  ))
+_sym_db.RegisterMessage(RolesMembership)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
   DESCRIPTOR = _USER,
@@ -856,8 +1036,8 @@ _DISCORD = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=1204,
-  serialized_end=1517,
+  serialized_start=1560,
+  serialized_end=1965,
   methods=[
   _descriptor.MethodDescriptor(
     name='Check',
@@ -893,6 +1073,15 @@ _DISCORD = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEDISPLAYNAMEREQUEST,
     output_type=_UPDATEDISPLAYNAMERESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateRoles',
+    full_name='grpc_discord.Discord.UpdateRoles',
+    index=4,
+    containing_service=None,
+    input_type=_UPDATEUSERROLESREQUEST,
+    output_type=_UPDATEUSERROLESRESPONSE,
     options=None,
   ),
 ])

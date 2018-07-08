@@ -29,6 +29,19 @@ message Role {
     int64 created_at = 8;
 }
 
+message AuthGroup {
+    int32 id = 1;
+    string name = 2;
+}
+
+message AuthGroupMembership {
+    repeated AuthGroup groups = 1;
+}
+
+message RolesMembership {
+    repeated Role roles = 1;
+}
+
 message User {
     int64 id = 1;
     string display_name = 2;
@@ -90,11 +103,17 @@ message UpdateDisplayNameResponse {
 }
 
 message UpdateUserRolesRequest {
-
+    User user = 1;
+    bool reset = 2;
+    oneof membership {
+        AuthGroupMembership groups = 3;
+        RolesMembership roles = 4;
+    }
 }
 
 message UpdateUserRolesResponse {
-
+    string message = 1;
+    bool success = 2;
 }
 
 service Discord {
@@ -102,4 +121,5 @@ service Discord {
     rpc GetUser(GetUserRequest) returns (GetUserResponse);
     rpc StripUserRoles(StripUserRequest) returns (StripUserResponse);
     rpc SetUserNickname(UpdateDisplayNameRequest) returns (UpdateDisplayNameResponse);
+    rpc UpdateRoles(UpdateUserRolesRequest) returns (UpdateUserRolesResponse);
 }
