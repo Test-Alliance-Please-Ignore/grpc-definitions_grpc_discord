@@ -31,6 +31,18 @@ class DiscordBase(abc.ABC):
     async def UpdateRoles(self, stream):
         pass
 
+    @abc.abstractmethod
+    async def KickUser(self, stream):
+        pass
+
+    @abc.abstractmethod
+    async def RegisterUser(self, stream):
+        pass
+
+    @abc.abstractmethod
+    async def UpdateUser(self, stream):
+        pass
+
     def __mapping__(self):
         return {
             '/grpc_discord.Discord/Check': grpclib.const.Handler(
@@ -62,6 +74,24 @@ class DiscordBase(abc.ABC):
                 grpclib.const.Cardinality.UNARY_UNARY,
                 grpc_discord.main_pb2.UpdateUserRolesRequest,
                 grpc_discord.main_pb2.UpdateUserRolesResponse,
+            ),
+            '/grpc_discord.Discord/KickUser': grpclib.const.Handler(
+                self.KickUser,
+                grpclib.const.Cardinality.UNARY_UNARY,
+                grpc_discord.main_pb2.KickUserRequest,
+                grpc_discord.main_pb2.KickUserResponse,
+            ),
+            '/grpc_discord.Discord/RegisterUser': grpclib.const.Handler(
+                self.RegisterUser,
+                grpclib.const.Cardinality.UNARY_UNARY,
+                grpc_discord.main_pb2.RegisterUserRequest,
+                grpc_discord.main_pb2.RegisterUserResponse,
+            ),
+            '/grpc_discord.Discord/UpdateUser': grpclib.const.Handler(
+                self.UpdateUser,
+                grpclib.const.Cardinality.UNARY_UNARY,
+                grpc_discord.main_pb2.UpdateUserRequest,
+                grpc_discord.main_pb2.UpdateUserResponse,
             ),
         }
 
@@ -98,4 +128,22 @@ class DiscordStub:
             '/grpc_discord.Discord/UpdateRoles',
             grpc_discord.main_pb2.UpdateUserRolesRequest,
             grpc_discord.main_pb2.UpdateUserRolesResponse,
+        )
+        self.KickUser = grpclib.client.UnaryUnaryMethod(
+            channel,
+            '/grpc_discord.Discord/KickUser',
+            grpc_discord.main_pb2.KickUserRequest,
+            grpc_discord.main_pb2.KickUserResponse,
+        )
+        self.RegisterUser = grpclib.client.UnaryUnaryMethod(
+            channel,
+            '/grpc_discord.Discord/RegisterUser',
+            grpc_discord.main_pb2.RegisterUserRequest,
+            grpc_discord.main_pb2.RegisterUserResponse,
+        )
+        self.UpdateUser = grpclib.client.UnaryUnaryMethod(
+            channel,
+            '/grpc_discord.Discord/UpdateUser',
+            grpc_discord.main_pb2.UpdateUserRequest,
+            grpc_discord.main_pb2.UpdateUserResponse,
         )

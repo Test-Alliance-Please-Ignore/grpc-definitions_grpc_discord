@@ -116,10 +116,44 @@ message UpdateUserRolesResponse {
     bool success = 2;
 }
 
+message KickUserRequest {
+    string reason = 1;
+    int64 discord_id = 2;
+}
+
+message KickUserResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message RegisterUserRequest {
+    int64 discord_id = 1;
+    int32 auth_id = 2;
+}
+
+message RegisterUserResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message UpdateUserRequest {
+    int64 discord_id = 1;
+    int32 auth_id = 2;
+    bool active = 3;
+}
+
+message UpdateUserResponse {
+    bool success = 1;
+    string message = 2;
+}
+
 service Discord {
     rpc Check(Ping) returns (Pong);
     rpc GetUser(GetUserRequest) returns (GetUserResponse);
     rpc StripUserRoles(StripUserRequest) returns (StripUserResponse);
     rpc SetUserNickname(UpdateDisplayNameRequest) returns (UpdateDisplayNameResponse);
     rpc UpdateRoles(UpdateUserRolesRequest) returns (UpdateUserRolesResponse);
+    rpc KickUser(KickUserRequest) returns (KickUserResponse);
+    rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
+    rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
 }

@@ -39,6 +39,21 @@ class DiscordStub(object):
         request_serializer=grpc__discord_dot_main__pb2.UpdateUserRolesRequest.SerializeToString,
         response_deserializer=grpc__discord_dot_main__pb2.UpdateUserRolesResponse.FromString,
         )
+    self.KickUser = channel.unary_unary(
+        '/grpc_discord.Discord/KickUser',
+        request_serializer=grpc__discord_dot_main__pb2.KickUserRequest.SerializeToString,
+        response_deserializer=grpc__discord_dot_main__pb2.KickUserResponse.FromString,
+        )
+    self.RegisterUser = channel.unary_unary(
+        '/grpc_discord.Discord/RegisterUser',
+        request_serializer=grpc__discord_dot_main__pb2.RegisterUserRequest.SerializeToString,
+        response_deserializer=grpc__discord_dot_main__pb2.RegisterUserResponse.FromString,
+        )
+    self.UpdateUser = channel.unary_unary(
+        '/grpc_discord.Discord/UpdateUser',
+        request_serializer=grpc__discord_dot_main__pb2.UpdateUserRequest.SerializeToString,
+        response_deserializer=grpc__discord_dot_main__pb2.UpdateUserResponse.FromString,
+        )
 
 
 class DiscordServicer(object):
@@ -80,6 +95,27 @@ class DiscordServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def KickUser(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def RegisterUser(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateUser(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DiscordServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -107,6 +143,21 @@ def add_DiscordServicer_to_server(servicer, server):
           servicer.UpdateRoles,
           request_deserializer=grpc__discord_dot_main__pb2.UpdateUserRolesRequest.FromString,
           response_serializer=grpc__discord_dot_main__pb2.UpdateUserRolesResponse.SerializeToString,
+      ),
+      'KickUser': grpc.unary_unary_rpc_method_handler(
+          servicer.KickUser,
+          request_deserializer=grpc__discord_dot_main__pb2.KickUserRequest.FromString,
+          response_serializer=grpc__discord_dot_main__pb2.KickUserResponse.SerializeToString,
+      ),
+      'RegisterUser': grpc.unary_unary_rpc_method_handler(
+          servicer.RegisterUser,
+          request_deserializer=grpc__discord_dot_main__pb2.RegisterUserRequest.FromString,
+          response_serializer=grpc__discord_dot_main__pb2.RegisterUserResponse.SerializeToString,
+      ),
+      'UpdateUser': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateUser,
+          request_deserializer=grpc__discord_dot_main__pb2.UpdateUserRequest.FromString,
+          response_serializer=grpc__discord_dot_main__pb2.UpdateUserResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
