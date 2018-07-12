@@ -54,6 +54,11 @@ class DiscordStub(object):
         request_serializer=grpc__discord_dot_main__pb2.UpdateUserRequest.SerializeToString,
         response_deserializer=grpc__discord_dot_main__pb2.UpdateUserResponse.FromString,
         )
+    self.InviteUser = channel.unary_unary(
+        '/grpc_discord.Discord/InviteUser',
+        request_serializer=grpc__discord_dot_main__pb2.InviteUserRequest.SerializeToString,
+        response_deserializer=grpc__discord_dot_main__pb2.InviteUserResponse.FromString,
+        )
 
 
 class DiscordServicer(object):
@@ -116,6 +121,13 @@ class DiscordServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def InviteUser(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DiscordServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -158,6 +170,11 @@ def add_DiscordServicer_to_server(servicer, server):
           servicer.UpdateUser,
           request_deserializer=grpc__discord_dot_main__pb2.UpdateUserRequest.FromString,
           response_serializer=grpc__discord_dot_main__pb2.UpdateUserResponse.SerializeToString,
+      ),
+      'InviteUser': grpc.unary_unary_rpc_method_handler(
+          servicer.InviteUser,
+          request_deserializer=grpc__discord_dot_main__pb2.InviteUserRequest.FromString,
+          response_serializer=grpc__discord_dot_main__pb2.InviteUserResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

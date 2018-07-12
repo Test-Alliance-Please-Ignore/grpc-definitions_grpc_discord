@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='grpc_discord',
-    version='0.9.0',
+    version='0.10.0',
     packages=['grpc_discord'],
     install_requires = [
         'grpcio',

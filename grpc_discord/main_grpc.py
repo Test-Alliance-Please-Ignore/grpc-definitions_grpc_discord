@@ -43,6 +43,10 @@ class DiscordBase(abc.ABC):
     async def UpdateUser(self, stream):
         pass
 
+    @abc.abstractmethod
+    async def InviteUser(self, stream):
+        pass
+
     def __mapping__(self):
         return {
             '/grpc_discord.Discord/Check': grpclib.const.Handler(
@@ -92,6 +96,12 @@ class DiscordBase(abc.ABC):
                 grpclib.const.Cardinality.UNARY_UNARY,
                 grpc_discord.main_pb2.UpdateUserRequest,
                 grpc_discord.main_pb2.UpdateUserResponse,
+            ),
+            '/grpc_discord.Discord/InviteUser': grpclib.const.Handler(
+                self.InviteUser,
+                grpclib.const.Cardinality.UNARY_UNARY,
+                grpc_discord.main_pb2.InviteUserRequest,
+                grpc_discord.main_pb2.InviteUserResponse,
             ),
         }
 
@@ -146,4 +156,10 @@ class DiscordStub:
             '/grpc_discord.Discord/UpdateUser',
             grpc_discord.main_pb2.UpdateUserRequest,
             grpc_discord.main_pb2.UpdateUserResponse,
+        )
+        self.InviteUser = grpclib.client.UnaryUnaryMethod(
+            channel,
+            '/grpc_discord.Discord/InviteUser',
+            grpc_discord.main_pb2.InviteUserRequest,
+            grpc_discord.main_pb2.InviteUserResponse,
         )

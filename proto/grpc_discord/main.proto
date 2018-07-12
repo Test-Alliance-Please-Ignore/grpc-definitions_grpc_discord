@@ -147,6 +147,15 @@ message UpdateUserResponse {
     string message = 2;
 }
 
+message InviteUserRequest {
+    int64 discord_id = 1;
+}
+
+message InviteUserResponse {
+    bool success = 1;
+    string message = 2;
+}
+
 service Discord {
     rpc Check(Ping) returns (Pong);
     rpc GetUser(GetUserRequest) returns (GetUserResponse);
@@ -156,4 +165,5 @@ service Discord {
     rpc KickUser(KickUserRequest) returns (KickUserResponse);
     rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
     rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+    rpc InviteUser(InviteUserRequest) returns (InviteUserResponse);
 }

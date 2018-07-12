@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='grpc_discord/main.proto',
   package='grpc_discord',
   syntax='proto3',
-  serialized_pb=_b('\n\x17grpc_discord/main.proto\x12\x0cgrpc_discord\"\x17\n\x04Ping\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x04Pong\x12\x0f\n\x07message\x18\x01 \x01(\t\"J\n\x05Guild\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04icon\x18\x03 \x01(\t\x12\x13\n\x0bunavailable\x18\x04 \x01(\x08J\x04\x08\x05\x10\x06\"\x9d\x01\n\x04Role\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\"\n\x05guild\x18\x03 \x01(\x0b\x32\x13.grpc_discord.Guild\x12\r\n\x05\x63olor\x18\x04 \x01(\x05\x12\r\n\x05hoist\x18\x05 \x01(\x08\x12\x10\n\x08position\x18\x06 \x01(\x05\x12\x13\n\x0bmentionable\x18\x07 \x01(\x08\x12\x12\n\ncreated_at\x18\x08 \x01(\x03\"%\n\tAuthGroup\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\">\n\x13\x41uthGroupMembership\x12\'\n\x06groups\x18\x01 \x03(\x0b\x32\x17.grpc_discord.AuthGroup\"4\n\x0fRolesMembership\x12!\n\x05roles\x18\x01 \x03(\x0b\x32\x12.grpc_discord.Role\"\xce\x01\n\x04User\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0b\n\x03\x62ot\x18\x03 \x01(\x08\x12\x15\n\rdiscriminator\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x11\n\tjoined_at\x18\x06 \x01(\x03\x12\x12\n\ncreated_at\x18\x07 \x01(\x03\x12$\n\x08top_role\x18\x08 \x01(\x0b\x32\x12.grpc_discord.Role\x12!\n\x05roles\x18\t \x03(\x0b\x32\x12.grpc_discord.Role\"`\n\x0eGetUserRequest\x12\x0c\n\x02id\x18\x01 \x01(\x03H\x00\x12\x16\n\x0c\x64isplay_name\x18\x02 \x01(\tH\x00\x12\x15\n\rinclude_roles\x18\x03 \x01(\x08\x42\x11\n\x0fsearch_criteria\"D\n\x0fGetUserResponse\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0f\n\x07success\x18\x02 \x01(\x08\"7\n\x13\x44isableUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"B\n\x0e\x42\x61nUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"3\n\x0f\x42\x61nUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"D\n\x10StripUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"5\n\x11StripUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"N\n\x18UpdateDisplayNameRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x10\n\x08nickname\x18\x02 \x01(\t\"=\n\x19UpdateDisplayNameResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"\xbc\x01\n\x16UpdateUserRolesRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\r\n\x05reset\x18\x02 \x01(\x08\x12\x33\n\x06groups\x18\x03 \x01(\x0b\x32!.grpc_discord.AuthGroupMembershipH\x00\x12.\n\x05roles\x18\x04 \x01(\x0b\x32\x1d.grpc_discord.RolesMembershipH\x00\x42\x0c\n\nmembership\";\n\x17UpdateUserRolesResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"5\n\x0fKickUserRequest\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12\x12\n\ndiscord_id\x18\x02 \x01(\x03\"4\n\x10KickUserResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\":\n\x13RegisterUserRequest\x12\x12\n\ndiscord_id\x18\x01 \x01(\x03\x12\x0f\n\x07\x61uth_id\x18\x02 \x01(\x05\"8\n\x14RegisterUserResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"H\n\x11UpdateUserRequest\x12\x12\n\ndiscord_id\x18\x01 \x01(\x03\x12\x0f\n\x07\x61uth_id\x18\x02 \x01(\x05\x12\x0e\n\x06\x61\x63tive\x18\x03 \x01(\x08\"6\n\x12UpdateUserResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\x88\x05\n\x07\x44iscord\x12/\n\x05\x43heck\x12\x12.grpc_discord.Ping\x1a\x12.grpc_discord.Pong\x12\x46\n\x07GetUser\x12\x1c.grpc_discord.GetUserRequest\x1a\x1d.grpc_discord.GetUserResponse\x12Q\n\x0eStripUserRoles\x12\x1e.grpc_discord.StripUserRequest\x1a\x1f.grpc_discord.StripUserResponse\x12\x62\n\x0fSetUserNickname\x12&.grpc_discord.UpdateDisplayNameRequest\x1a\'.grpc_discord.UpdateDisplayNameResponse\x12Z\n\x0bUpdateRoles\x12$.grpc_discord.UpdateUserRolesRequest\x1a%.grpc_discord.UpdateUserRolesResponse\x12I\n\x08KickUser\x12\x1d.grpc_discord.KickUserRequest\x1a\x1e.grpc_discord.KickUserResponse\x12U\n\x0cRegisterUser\x12!.grpc_discord.RegisterUserRequest\x1a\".grpc_discord.RegisterUserResponse\x12O\n\nUpdateUser\x12\x1f.grpc_discord.UpdateUserRequest\x1a .grpc_discord.UpdateUserResponseb\x06proto3')
+  serialized_pb=_b('\n\x17grpc_discord/main.proto\x12\x0cgrpc_discord\"\x17\n\x04Ping\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x04Pong\x12\x0f\n\x07message\x18\x01 \x01(\t\"J\n\x05Guild\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04icon\x18\x03 \x01(\t\x12\x13\n\x0bunavailable\x18\x04 \x01(\x08J\x04\x08\x05\x10\x06\"\x9d\x01\n\x04Role\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\"\n\x05guild\x18\x03 \x01(\x0b\x32\x13.grpc_discord.Guild\x12\r\n\x05\x63olor\x18\x04 \x01(\x05\x12\r\n\x05hoist\x18\x05 \x01(\x08\x12\x10\n\x08position\x18\x06 \x01(\x05\x12\x13\n\x0bmentionable\x18\x07 \x01(\x08\x12\x12\n\ncreated_at\x18\x08 \x01(\x03\"%\n\tAuthGroup\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\">\n\x13\x41uthGroupMembership\x12\'\n\x06groups\x18\x01 \x03(\x0b\x32\x17.grpc_discord.AuthGroup\"4\n\x0fRolesMembership\x12!\n\x05roles\x18\x01 \x03(\x0b\x32\x12.grpc_discord.Role\"\xce\x01\n\x04User\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0b\n\x03\x62ot\x18\x03 \x01(\x08\x12\x15\n\rdiscriminator\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x11\n\tjoined_at\x18\x06 \x01(\x03\x12\x12\n\ncreated_at\x18\x07 \x01(\x03\x12$\n\x08top_role\x18\x08 \x01(\x0b\x32\x12.grpc_discord.Role\x12!\n\x05roles\x18\t \x03(\x0b\x32\x12.grpc_discord.Role\"`\n\x0eGetUserRequest\x12\x0c\n\x02id\x18\x01 \x01(\x03H\x00\x12\x16\n\x0c\x64isplay_name\x18\x02 \x01(\tH\x00\x12\x15\n\rinclude_roles\x18\x03 \x01(\x08\x42\x11\n\x0fsearch_criteria\"D\n\x0fGetUserResponse\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0f\n\x07success\x18\x02 \x01(\x08\"7\n\x13\x44isableUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"B\n\x0e\x42\x61nUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"3\n\x0f\x42\x61nUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"D\n\x10StripUserRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x0e\n\x06reason\x18\x02 \x01(\t\"5\n\x11StripUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"N\n\x18UpdateDisplayNameRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\x10\n\x08nickname\x18\x02 \x01(\t\"=\n\x19UpdateDisplayNameResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"\xbc\x01\n\x16UpdateUserRolesRequest\x12 \n\x04user\x18\x01 \x01(\x0b\x32\x12.grpc_discord.User\x12\r\n\x05reset\x18\x02 \x01(\x08\x12\x33\n\x06groups\x18\x03 \x01(\x0b\x32!.grpc_discord.AuthGroupMembershipH\x00\x12.\n\x05roles\x18\x04 \x01(\x0b\x32\x1d.grpc_discord.RolesMembershipH\x00\x42\x0c\n\nmembership\";\n\x17UpdateUserRolesResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\"5\n\x0fKickUserRequest\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12\x12\n\ndiscord_id\x18\x02 \x01(\x03\"4\n\x10KickUserResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\":\n\x13RegisterUserRequest\x12\x12\n\ndiscord_id\x18\x01 \x01(\x03\x12\x0f\n\x07\x61uth_id\x18\x02 \x01(\x05\"8\n\x14RegisterUserResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"H\n\x11UpdateUserRequest\x12\x12\n\ndiscord_id\x18\x01 \x01(\x03\x12\x0f\n\x07\x61uth_id\x18\x02 \x01(\x05\x12\x0e\n\x06\x61\x63tive\x18\x03 \x01(\x08\"6\n\x12UpdateUserResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\'\n\x11InviteUserRequest\x12\x12\n\ndiscord_id\x18\x01 \x01(\x03\"6\n\x12InviteUserResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\xd9\x05\n\x07\x44iscord\x12/\n\x05\x43heck\x12\x12.grpc_discord.Ping\x1a\x12.grpc_discord.Pong\x12\x46\n\x07GetUser\x12\x1c.grpc_discord.GetUserRequest\x1a\x1d.grpc_discord.GetUserResponse\x12Q\n\x0eStripUserRoles\x12\x1e.grpc_discord.StripUserRequest\x1a\x1f.grpc_discord.StripUserResponse\x12\x62\n\x0fSetUserNickname\x12&.grpc_discord.UpdateDisplayNameRequest\x1a\'.grpc_discord.UpdateDisplayNameResponse\x12Z\n\x0bUpdateRoles\x12$.grpc_discord.UpdateUserRolesRequest\x1a%.grpc_discord.UpdateUserRolesResponse\x12I\n\x08KickUser\x12\x1d.grpc_discord.KickUserRequest\x1a\x1e.grpc_discord.KickUserResponse\x12U\n\x0cRegisterUser\x12!.grpc_discord.RegisterUserRequest\x1a\".grpc_discord.RegisterUserResponse\x12O\n\nUpdateUser\x12\x1f.grpc_discord.UpdateUserRequest\x1a .grpc_discord.UpdateUserResponse\x12O\n\nInviteUser\x12\x1f.grpc_discord.InviteUserRequest\x1a .grpc_discord.InviteUserResponseb\x06proto3')
 )
 
 
@@ -1085,6 +1085,75 @@ _UPDATEUSERRESPONSE = _descriptor.Descriptor(
   serialized_end=1914,
 )
 
+
+_INVITEUSERREQUEST = _descriptor.Descriptor(
+  name='InviteUserRequest',
+  full_name='grpc_discord.InviteUserRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='discord_id', full_name='grpc_discord.InviteUserRequest.discord_id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1916,
+  serialized_end=1955,
+)
+
+
+_INVITEUSERRESPONSE = _descriptor.Descriptor(
+  name='InviteUserResponse',
+  full_name='grpc_discord.InviteUserResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='grpc_discord.InviteUserResponse.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='grpc_discord.InviteUserResponse.message', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1957,
+  serialized_end=2011,
+)
+
 _ROLE.fields_by_name['guild'].message_type = _GUILD
 _AUTHGROUPMEMBERSHIP.fields_by_name['groups'].message_type = _AUTHGROUP
 _ROLESMEMBERSHIP.fields_by_name['roles'].message_type = _ROLE
@@ -1134,6 +1203,8 @@ DESCRIPTOR.message_types_by_name['RegisterUserRequest'] = _REGISTERUSERREQUEST
 DESCRIPTOR.message_types_by_name['RegisterUserResponse'] = _REGISTERUSERRESPONSE
 DESCRIPTOR.message_types_by_name['UpdateUserRequest'] = _UPDATEUSERREQUEST
 DESCRIPTOR.message_types_by_name['UpdateUserResponse'] = _UPDATEUSERRESPONSE
+DESCRIPTOR.message_types_by_name['InviteUserRequest'] = _INVITEUSERREQUEST
+DESCRIPTOR.message_types_by_name['InviteUserResponse'] = _INVITEUSERRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Ping = _reflection.GeneratedProtocolMessageType('Ping', (_message.Message,), dict(
@@ -1311,6 +1382,20 @@ UpdateUserResponse = _reflection.GeneratedProtocolMessageType('UpdateUserRespons
   ))
 _sym_db.RegisterMessage(UpdateUserResponse)
 
+InviteUserRequest = _reflection.GeneratedProtocolMessageType('InviteUserRequest', (_message.Message,), dict(
+  DESCRIPTOR = _INVITEUSERREQUEST,
+  __module__ = 'grpc_discord.main_pb2'
+  # @@protoc_insertion_point(class_scope:grpc_discord.InviteUserRequest)
+  ))
+_sym_db.RegisterMessage(InviteUserRequest)
+
+InviteUserResponse = _reflection.GeneratedProtocolMessageType('InviteUserResponse', (_message.Message,), dict(
+  DESCRIPTOR = _INVITEUSERRESPONSE,
+  __module__ = 'grpc_discord.main_pb2'
+  # @@protoc_insertion_point(class_scope:grpc_discord.InviteUserResponse)
+  ))
+_sym_db.RegisterMessage(InviteUserResponse)
+
 
 
 _DISCORD = _descriptor.ServiceDescriptor(
@@ -1319,8 +1404,8 @@ _DISCORD = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=1917,
-  serialized_end=2565,
+  serialized_start=2014,
+  serialized_end=2743,
   methods=[
   _descriptor.MethodDescriptor(
     name='Check',
@@ -1392,6 +1477,15 @@ _DISCORD = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEUSERREQUEST,
     output_type=_UPDATEUSERRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='InviteUser',
+    full_name='grpc_discord.Discord.InviteUser',
+    index=8,
+    containing_service=None,
+    input_type=_INVITEUSERREQUEST,
+    output_type=_INVITEUSERRESPONSE,
     options=None,
   ),
 ])
