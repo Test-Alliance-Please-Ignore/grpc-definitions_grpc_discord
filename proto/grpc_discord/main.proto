@@ -2,12 +2,18 @@ syntax = "proto3";
 
 package grpc_discord;
 
+
 message Ping {
-    string message = 1;   
+    string message = 1;
 }
 
 message Pong {
-    string message = 1;   
+    string message = 1;
+}
+
+message Channel {
+    int64 id = 1;
+    string name = 2;
 }
 
 message Guild {
@@ -156,6 +162,19 @@ message InviteUserResponse {
     string message = 2;
 }
 
+message SendMessageRequest {
+    oneof target {
+        Channel channel = 1;
+        User user = 2;
+    }
+    string message = 3;
+}
+
+message SendMessageResponse {
+    bool success = 1;
+    string message = 2;
+}
+
 service Discord {
     rpc Check(Ping) returns (Pong);
     rpc GetUser(GetUserRequest) returns (GetUserResponse);
@@ -166,4 +185,5 @@ service Discord {
     rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
     rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
     rpc InviteUser(InviteUserRequest) returns (InviteUserResponse);
+    rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
 }
