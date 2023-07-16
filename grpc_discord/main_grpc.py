@@ -2,9 +2,12 @@
 # source: grpc_discord/main.proto
 # plugin: grpclib.plugin.main
 import abc
+import typing
 
 import grpclib.const
 import grpclib.client
+if typing.TYPE_CHECKING:
+    import grpclib.server
 
 import grpc_discord.main_pb2
 
@@ -12,46 +15,46 @@ import grpc_discord.main_pb2
 class DiscordBase(abc.ABC):
 
     @abc.abstractmethod
-    async def Check(self, stream):
+    async def Check(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.Ping, grpc_discord.main_pb2.Pong]') -> None:
         pass
 
     @abc.abstractmethod
-    async def GetUser(self, stream):
+    async def GetUser(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.GetUserRequest, grpc_discord.main_pb2.GetUserResponse]') -> None:
         pass
 
     @abc.abstractmethod
-    async def StripUserRoles(self, stream):
+    async def StripUserRoles(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.StripUserRequest, grpc_discord.main_pb2.StripUserResponse]') -> None:
         pass
 
     @abc.abstractmethod
-    async def SetUserNickname(self, stream):
+    async def SetUserNickname(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.UpdateDisplayNameRequest, grpc_discord.main_pb2.UpdateDisplayNameResponse]') -> None:
         pass
 
     @abc.abstractmethod
-    async def UpdateRoles(self, stream):
+    async def UpdateRoles(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.UpdateUserRolesRequest, grpc_discord.main_pb2.UpdateUserRolesResponse]') -> None:
         pass
 
     @abc.abstractmethod
-    async def KickUser(self, stream):
+    async def KickUser(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.KickUserRequest, grpc_discord.main_pb2.KickUserResponse]') -> None:
         pass
 
     @abc.abstractmethod
-    async def RegisterUser(self, stream):
+    async def RegisterUser(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.RegisterUserRequest, grpc_discord.main_pb2.RegisterUserResponse]') -> None:
         pass
 
     @abc.abstractmethod
-    async def UpdateUser(self, stream):
+    async def UpdateUser(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.UpdateUserRequest, grpc_discord.main_pb2.UpdateUserResponse]') -> None:
         pass
 
     @abc.abstractmethod
-    async def InviteUser(self, stream):
+    async def InviteUser(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.InviteUserRequest, grpc_discord.main_pb2.InviteUserResponse]') -> None:
         pass
 
     @abc.abstractmethod
-    async def SendMessage(self, stream):
+    async def SendMessage(self, stream: 'grpclib.server.Stream[grpc_discord.main_pb2.SendMessageRequest, grpc_discord.main_pb2.SendMessageResponse]') -> None:
         pass
 
-    def __mapping__(self):
+    def __mapping__(self) -> typing.Dict[str, grpclib.const.Handler]:
         return {
             '/grpc_discord.Discord/Check': grpclib.const.Handler(
                 self.Check,
